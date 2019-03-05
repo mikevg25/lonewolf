@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <title>Lone Wolf - Amsterdam</title>
+    </head>
+    <body>
+        <img src="/static/wolf.png" alt="Lone Wolf" height="165" width="165"><br>
+        <div class="titelstyle">
+            LONE WOLF<br>-<br>AMSTERDAM
+        </div>
+
+        <br><br><br>
+
+        <div class="ondertitel">
+            NOTIFY ME!
+        </div>
+        <div>
+            <form action="{{ url_for('notify') }}" method="post">
+            <fieldset>
+                <div class="tekst">
+                    <div class="invulbalk">
+                        My Name:<br><input autocomplete="off" name="name" placeholder="Name" type="name"/>
+                    </div><br>
+                    <div class="invulbalk">
+                        My Email:<br><input name="email" placeholder="Email" type="email"/>
+                    </div>
+                    <br>
+                    <div>
+                        <button class="button" type="submit">FINISH UP</button>
+                    </div>
+                </div>
+            </fieldset>
+	        </form>
+        </div>
+    </body>
+</html>
